@@ -1,0 +1,98 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+input{
+    margin-bottom: 20px;   
+}
+li{
+    display: flex;
+    text-decoration: none;
+    
+}
+.form{
+    border: 2px solid black;
+}
+/*table{
+    margin-top: 2;
+}*/
+
+body{
+    font-family: 'Poppins';
+}
+header{
+    height: 100vh;
+    width: 100%;
+    background-image: url(img.jpg);
+    background-size: cover;
+} 
+.navbar{
+    position: absolute;
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+.navbar a{
+    color: yellowgreen;
+}
+.navbar .bienvenu{
+    font-size: 1cm;
+    font-weight: bold;
+}
+
+.navbar .nav-link ul{
+    display: flex;  
+}
+.navbar .nav-link ul li{
+    margin: 0 25px;    
+}
+div{
+    margin:60px auto;
+    margin-bottom:20px ;
+    width: 400px;
+    box-shadow: 0 2px 4px 3px rgba(0,0,0,.1);
+    padding: 40px;
+    border-radius: 5px;
+    position: relative;
+
+}
+div input{
+    width: 100%;
+    height: 45px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    background-color: rgb(152, 143, 144);
+    padding: 0 15px;
+}
+
+table{
+    border-collapse: collapse;
+    color: #404040;
+}
+
+th{
+    font-size: 16px;
+    padding: 5px 20px;
+    font-weight: 500;
+}
+td{
+    font-size: 14px;
+    text-align:center;
+    padding: 5px 30px;
+    font-weight: 400;
+}
+tr:nth-child(2n){
+    background-color: #caf18e;
+}
+tr:nth-child(2n)td{
+    border-bottom: 1px solid #e0e0e0;
+    border-top: 1px solid #e0e0e0;
+}
+
