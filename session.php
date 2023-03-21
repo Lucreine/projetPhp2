@@ -1,16 +1,12 @@
 <?php
-    session_start();
-    $_SESSION['email']=$_POST['email'];
-    $_SESSION['pwd']=$_POST['pwd'];
-    HEADER('Location:affclient.php');
-
+    require_once("ClassClient.php");
     // Démarrage de la session
     session_start();
     // On vérifie si le champ Login n'est pas vide.
     if ($_SESSION['email']=='')
     // Si c'est le cas, le visiteur ne s'est pas loger et subit une redirection
     { 
-        Header('Location:client.php');
+        //Header('Location:client.php');
     }
     else
     {
@@ -18,9 +14,9 @@
     }
     // Test De vérification que l'user est bien dans la liste des utilisateurs Mysql
     // Connexion à la base de données MySql
-    $DataBase = mysql_connect ( "localhost" , 'root' , '', "authentification") ;
+    //$DataBase = mysql_connect ( "localhost" , 'root' , '', "authentification") ;
     // Cette table contient la liste des users enregistrés.
-    mysql_select_db ( "mysql" , $DataBase );
+    mysql_select_db ( "mysql" , $this->dataBase );
     // Nous allons chercher le vrai mot de passe ( crypté ) de l'utilisateur connecté
     // Cryptage du mot de passe donné par l'utilsateur à la connexion par requête SQL
     $Requete ="Select client('".$_SESSION['pwd']."');";
@@ -52,25 +48,6 @@
     if ( $CheckUser==False )
     // Redirection vers la fenêtre de connexion.
     {
-        Header('Location:lClassCient.php');
+        Header('Location:ClassCient.php');
     }
-    
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link href="style.css" rel="stylesheet">    
-    <title>Document</title>
-</head>
-<body>
-<form action="" method="POST">
-    <div class="form">
-        <label >Email</label>
-        <input type="text" name="email" required value="<?=$_POST['email'] ?? ''?>">
-        <label >Password</label>
-        <input type="text" name="pwd" value="<?=$_POST['pwd'] ?? ''?>">
-        <input type="submit" value="Enregistrer" name="button">
-    </div>   
-</form>

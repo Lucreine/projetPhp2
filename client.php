@@ -28,7 +28,7 @@
         <label > Confirme Password</label>
         <input type="text" name="confirmpwd" value="<?=$_POST['confirmpwd'] ?? ''?>"><br>
         <input type="submit" value="Enregistrer" name="button">
-        <a href="client.php"><h2>Liste des clients</h2></a>
+        <a href="affclient.php"><h2>Liste des clients</h2></a>
     </div>
     
 </form>

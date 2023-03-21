@@ -1,7 +1,7 @@
 <?php
     require_once("ClassClient.php"); 
     $prod=new Client();
-    $tab = $prod->selectclient();
+    $tab = $prod->selectclient();  
 ?>
 <link href="style.css" rel="stylesheet">
 <table>
