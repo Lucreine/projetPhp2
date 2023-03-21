@@ -18,7 +18,7 @@
                 <ul>
                     <li class="active"><a href="header.php">Accueil</a></li>
                     <li><a href="produit.php">Produit</a></li>
-                    <li><a href="client.php">Se connecter</a></li>
+                    <li><a href="client.php">Se connecter au compte</a></li>
                 </ul>
             </div>
             
