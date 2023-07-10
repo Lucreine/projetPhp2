@@ -51,3 +51,55 @@
         Header('Location:ClassCient.php');
     }
 ?>
+
+<?php
+class Auth {
+    private $username;
+    private $password;
+    
+    public function __construct($username, $password) {
+        $this->username = $username;
+        $this->password = $password;
+    }
+    
+    public function validate() {
+        // Vérifiez si l'utilisateur a soumis le formulaire
+        if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+            return false;
+        }
+        
+        // Vérifiez si les champs d'entrée sont vides
+        if (empty($this->username) || empty($this->password)) {
+            return false;
+        }
+        
+        // Effectuez une requête à la base de données pour vérifier si l'utilisateur existe
+        $pdo = new PDO('mysql:host=localhost;dbname=mydatabase', 'myusername', 'mypassword');
+        $stmt = $pdo->prepare('SELECT * FROM users WHERE username = ?');
+        $stmt->execute([$this->username]);
+        $user = $stmt->fetch();
+        
+        // Vérifiez si l'utilisateur existe et que le mot de passe est correct
+        if (!$user || !password_verify($this->password, $user['password'])) {
+            return false;
+        }
+        
+        // Si tout est ok, connectez l'utilisateur
+        $_SESSION['user'] = $user;
+        return true;
+    }
+}
+
+// Créez une instance de la classe Auth avec les données du formulaire
+$auth = new Auth($_POST['username'], $_POST['password']);
+
+// Validez l'authentification
+if ($auth->validate()) {
+    // Redirigez l'utilisateur vers une page de succès
+    header('Location: success.php');
+    exit;
+} else {
+    // Afficher un message d'erreur
+    echo 'Nom d\'utilisateur ou mot de passe incorrect.';
+}
+?>

@@ -18,6 +18,7 @@
                 <ul>
                     <li class="active"><a href="index.php">Accueil</a></li>
                     <li><a href="produits.php">Produits</a></li>
+                    <li><a href="affclient.php">Clients</a></li>
                     <li><a href="produit.php">Enregistrer Produit</a></li>
                     <li><a href="action.php">Action Produit</a></li>
                     <li><a href="#">Deconnecter</a></li>

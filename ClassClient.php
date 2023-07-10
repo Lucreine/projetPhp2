@@ -35,11 +35,12 @@
             $tab = $result->fetchAll();
             return $tab;
         } 
-        /*public function confirmpwd(string $idcli){
-            $requete = "SELECT * FROM produit where idcli=?";
-            $select=$this->dataBase->prepare($requete);
-            $select->execute([$idcli]);
-            return $select->fetch(PDO::FETCH_ASSOC);
-        } */     
+        public function selectemailclient($email , $pwd){
+            
+            $requete = "SELECT email,pwd FROM `client` WHERE email = '$email' AND pwd = '$pwd'";
+            $result = $this->dataBase -> query($requete);
+            $tab = $result->fetch();
+            return $tab;
+        }   
     }   
 ?>

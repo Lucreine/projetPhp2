@@ -11,15 +11,16 @@
     <title>Accueil</title>
 </head>
 <body>
-    
-        <nav class="navbar">
-            <p class="bienvenu">Bienvenue sur la page d'accueil</p>
+        
+    <nav class="navbar">
+        <p class="bienvenu">Bienvenue sur la page du client</p>
             <div class="nav-link">
                 <ul>
-                    <li class="active"><a href="#">Accueil</a></li>
+                    <li class="active"><a href="index.php">Accueil</a></li>
                     <li><a href="produits.php">Produits</a></li>
-                    <li><a href="loginclient.php">Se connecter</a></li>
-                    <li><a href="client.php">S'inscrire</a></li>
+                    <li><a href="produit.php">Enregistrer Produit</a></li>
+                    <li><a href="action.php">Action Produit</a></li>
+                    <li><a href="#">Deconnecter</a></li>
                 </ul>
             </div>
             
@@ -27,6 +28,7 @@
         
         <header></header>
        
+      
 </body>
 </html>
 

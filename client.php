@@ -4,7 +4,7 @@
         if($_POST["confirmpwd"]==$_POST["pwd"]){
             $client = new Client($_POST["nomcli"],$_POST["email"],$_POST["pwd"],$_POST["confirmpwd"]);
             $client ->savecli();
-            header("Location:affclient.php");
+            header("Location:headerclient.php");
         }else{            
             echo "Veuillez entrer le meme mot de passe.";
         }

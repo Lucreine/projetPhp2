@@ -4,7 +4,7 @@
         if($_POST["confirmpwd"]==$_POST["pwd"]){
             $client = new Client($_POST["nomad"],$_POST["email"],$_POST["pwd"],$_POST["confirmpwd"]);
             $client ->savead();
-            header("Location:affadmin.php");
+            header("Location:header.php");
         }else{            
             echo "Veuillez entrer le meme mot de passe.";
         }
